@@ -1,0 +1,9 @@
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-image: url('https://preview.redd.it/6c0r6sx6r9ea1.jpg?width=3840&format=pjpg&auto=webp&v=enabled&s=23dd015c32a6f8e065c37b8923922d4857eeabfa');
+}

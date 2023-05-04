@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fira Sans';
+    background-color: rgb(126, 152, 173, 0.2);
+    width: 100%;
+}
+
+.searchBar {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 30px;
+    width: 240px;
+    padding: 0px 20px 0px 20px;
+    outline: 0;
+    background-color: #f5f5f5;
+    font-size: 15px;
+    margin-right: 2px;
+    font-family: 'Fira Sans';
+    text-align: center;
+    background-color: #FEF2F4;
+    font-weight: bold;
+}
+
+.aggButton {
+    border: 1px solid grey;
+    height: 30px;
+    border-radius: 5px;
+    margin: 2px;
+    font-family: 'Fira Sans';
+    background-color: #EDC6B1;
+    border: 1px solid black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.aggButton:hover {
+    border: 1px solid white;
+}
+
+.aggButton.navBar {
+    background-color: #7C96AB;
+    height: 35px;
+}
+
+.rmLogo {
+    height: 40px;
+}

@@ -1,0 +1,209 @@
+.data {
+    width: 50%;
+    color: white;
+    font-size: 15px;
+    font-family: 'Fira Sans';
+    background-color: rgb(255, 191, 155, 0.8);
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.pic {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.characterPic {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    border: 8px solid #BE5A83;
+}
+
+.characterPic:hover {
+    border: 8px solid #E06469;
+}
+
+.characterPic.Female {
+    border: 8px solid #917FB3;
+}
+
+.characterPic.Female:hover {
+    border: 8px solid #E5BEEC;
+}
+
+.characterPic.Male {
+    border: 8px solid #088395;
+}
+
+.characterPic.Male:hover {
+    border: 8px solid #05BFDB;
+}
+
+.characterPic.Genderless {
+    border: 8px solid #B9EDDD;
+}
+
+.characterPic.Genderless:hover {
+    border: 8px solid #569DAA;
+}
+
+.characterPic.App.Creator {
+    border: 8px solid #1F1D36;
+}
+
+.characterPic.App.Creator:hover {
+    border: 8px solid #B85C38;
+}
+
+
+.link {
+    background-color: #FF4C29;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link:hover {
+    background-color: #088395;
+}
+
+.detail {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.favicon {
+    width: 16px;
+    height: 16px;
+}
+
+.linkContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ownImage {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    border: 8px solid #95CD41;
+}
+
+.ownImage:hover {
+    border: 8px solid #088395;
+}
+
+.aboutMeCard {
+    background-color: #E86A33;
+    opacity: 0.8;
+    border-radius: 15px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0px 5px 5px 5px;
+    font-family: 'Fira Sans';
+    margin-bottom: 20px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.name.Female {
+    color: #654E92;
+}
+
+.name.Male {
+    color: #0B2447;
+}
+
+.right.Male {
+    color: #576CBC;
+}
+
+.name.Genderless {
+    color: #2C3333;
+}
+
+.name.App.Creator {
+    color: #040303;
+}
+
+.left {
+    text-align: center;
+}
+
+.left.Female {
+    color: #5F264A;
+}
+
+.right.Female {
+    color: #643A6B;
+}
+
+.left.Male {
+    color: #19376D;
+}
+
+.left.Genderless {
+    color: #2E4F4F;
+}
+
+.left.App.Creator {
+    color: #461111;
+}
+
+.right.App.Creator {
+    color: #B3541E;
+}
+
+.right.Genderless {
+    color: #0E8388;
+}
+
+.starButton {
+    background-color: rgb(0, 0, 0, 0.2);
+    position: relative;
+    left: 65px;
+    bottom: 170px;
+    font-size: 12px;
+    color: yellow;
+}
+
+.starButton.false {
+    color: transparent;
+    background-color: transparent;
+}
+
+.leftAndRight {
+    display: flex;
+    flex-direction: row;
+}
+
+.left,
+.right {
+    width: 50%;
+}
+
+.left {
+    text-align: center;
+}
+
+.right {
+    margin-right: 10px;
+}
+
+.header {
+    margin-top: 25px;
+}
+
+.lastRow {
+    margin-bottom: 25px;
+}

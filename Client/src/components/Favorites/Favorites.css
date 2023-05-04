@@ -1,0 +1,20 @@
+.favContainer .favoritesButtons {
+    margin-top: 10px;
+    font-size: 12px;
+    font-family: 'Fira Sans';
+    font-weight: bold;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.favContainer .favoritesButtons select {
+    font-family: 'Fira Sans';
+    border-radius: 10px;
+    text-align: center;
+}
+
+.favContainer .card {
+    opacity: 1;
+}
