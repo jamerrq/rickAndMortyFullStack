@@ -16,31 +16,34 @@ import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 
 
+// App component
 function App() {
 
+    // Added characters
     const [characters, setCharacters] = useState([]);
-    const location = useLocation();
+    // Routes indicator and navigator
+    const location = useLocation(), navigate = useNavigate();
+    // Access state
     const [access, setAccess] = useState(false);
+    // Credentials
     const email = "jamerrq@henry.com", _password = "henry123";
-    const navigate = useNavigate();
 
-    // const [defaultCharacters, setDefaultCharacters] = useState([]);
-
+    // Login function
     function login(userData) {
         if (userData.email === email && userData.password === _password) {
             setAccess(true);
             navigate("/home");
         } else {
             alert("Usuario o contraseña incorrectos!");
-        }
-    }
+        };
+    };
 
     useEffect(() => {
         !access && navigate('/');
     }, [access, navigate]);
 
     function onSearch(id) {
-        const url = `https://rickandmortyapi.com/api/character/${id}`;
+        const url = `http://localhost:3001/rickandmorty/character/${id}`;
         axios(url).then(({ data }) => {
             if (data.name) {
                 let isRepeated = characters.reduce((acc, c) => {
