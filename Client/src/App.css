@@ -5,5 +5,23 @@
 }
 
 body {
-    background-image: url('https://preview.redd.it/6c0r6sx6r9ea1.jpg?width=3840&format=pjpg&auto=webp&v=enabled&s=23dd015c32a6f8e065c37b8923922d4857eeabfa');
+    font-family: 'Fira Sans';
+    font-size: 22px;
+    background-image: url('https://i.redd.it/4rpeu19p6gk81.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 1366px 768px;
 }
+
+/* body {
+    background-image: url('https://preview.redd.it/6c0r6sx6r9ea1.jpg?width=3840&format=pjpg&auto=webp&v=enabled&s=23dd015c32a6f8e065c37b8923922d4857eeabfa');
+} */
+
+/* body {
+    background-image: url('https://i.redd.it/3qr0s3ou9pt61.jpg');
+    background-image: url('https://i.redd.it/4rpeu19p6gk81.jpg');
+    background-image: url('https://i.redd.it/4ea8r9n0egi81.png');
+    background-image: url('https://i.redd.it/41qgfndwltv51.jpg');
+    background-image: url('https://i.redd.it/9x87z34z9es71.jpg');
+    background-image: url('https://i.redd.it/3l8pahjewki61.jpg');
+} */

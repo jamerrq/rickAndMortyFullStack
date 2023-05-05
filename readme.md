@@ -8,4 +8,4 @@ desarrollada en React.
 
 ## Desktop App
 
-![desktop](./imgs/outv1.0.gif)
+![desktop](./imgs/outv2.0.gif)

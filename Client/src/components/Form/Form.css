@@ -10,19 +10,26 @@ form {
     flex-direction: column;
     width: 300px;
     align-items: center;
-    background: #569DAA;
+    background-color: #222222;
+    border: 2px solid #7CFD50;
     border-radius: 8px;
     padding: 10px 5px 10px 5px;
     font-size: 20px;
-    font-family: 'Fira Sans';
+    font-family: monospace;
+
+}
+
+hr {
+    display: none;
 }
 
 form input {
     border-radius: 5px;
     padding: 0px 15px 0px 15px;
     height: 20px;
-    font-family: 'Fira Sans';
+    font-family: 'monspace';
     text-align: center;
+    border: 1px solid #3B3B3B;
 }
 
 form p {
@@ -32,10 +39,9 @@ form p {
 }
 
 .formSubmitButton {
-    background: #0066A2;
+    background: #3B3B3B;
     color: white;
     border-style: outset;
-    border-color: #0066A2;
     border-radius: 5px;
     width: 100px;
     height: 25px;
@@ -43,9 +49,29 @@ form p {
     font: bold15px arial, sans-serif;
     text-shadow: none;
     font-family: 'Fira Sans';
+    border: #3B3B3B;
+}
+
+.formSubmitButton:hover:enabled {
+    border: 1px solid #7CFD50;
+}
+
+/* .formSubmitButton:hover:disabled {
+    border: 1px solid red;
+} */
+
+form img {
+    /* height: 50px; */
+    height: 300px;
 }
 
 
-form img {
-    height: 50px;
+.inputField {
+    display: flex;
+    align-items: flex-end;
+}
+
+.inputField i {
+    color: #7CFD50;
+    font-size: 18px;
 }

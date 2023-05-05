@@ -1,14 +1,18 @@
 const http = require('http');
-const data = require('./utils/data')
+// const data = require('./utils/data');
+const getCharById = require('./controllers/getCharById');
 
 
 const PORT = 3001;
 const server = http.createServer((req, res) => {
+
+    // To allow front end to access the server
     res.setHeader('Access-Control-Allow-Origin', '*');
+
+    // Petición válida
     if (req.url.includes('rickandmorty/character')) {
         let id = req.url.split('/').at(-1);
-        let character = data.find(character => character.id === Number(id));
-        res.writeHead(200, { "Content-type": "application/json" });
-        res.end(JSON.stringify(character));
+        getCharById(res, id);
+        // console.log('Sent petition to getCharById');
     }
 }).listen(PORT, console.log(`port on ${PORT}`));
