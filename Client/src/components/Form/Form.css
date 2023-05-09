@@ -56,9 +56,9 @@ form p {
     border: 1px solid #7CFD50;
 }
 
-/* .formSubmitButton:hover:disabled {
+.formSubmitButton:hover:disabled {
     border: 1px solid red;
-} */
+}
 
 form img {
     /* height: 50px; */

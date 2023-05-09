@@ -24,72 +24,94 @@ export default function SearchBar(props) {
 
     return (
         <div className="container">
-            <input
-                type='search'
-                className="searchBar"
-                value={id}
-                onChange={handleChange}
-                placeholder="min: 1, max: 826"
-            />
-            <button
-                onClick={myOwnSearch}
-                className="aggButton"
-                title="Add character"
-            >
-                <i className='fas fa-plus'></i>
-            </button>
-            <span>&emsp;&emsp;</span>
-            <button
-                title="Add random character"
-                onClick={randomSearch}
-                className="aggButton"
-            >
-                <i className='fas fa-dice-five'></i>
-            </button>
-            <button
-                title="Remove all characters"
-                className="aggButton"
-                onClick={props.clearAllFunction}
-            >
-                <i className='fas fa-trash'></i>
-            </button>
 
-            <button
-                className="aggButton"
-                onClick={props.loadDefaultFn}
-                title="Load default view"
-            >
-                🌈
-            </button>
-            <span>&emsp;&emsp;&emsp;&emsp;&emsp;</span>
-            <img className="rmLogo" src="logorm.png" alt="logoRM" />
-            <span>&emsp;&emsp;&emsp;&emsp;&emsp;</span>
-            <NavLink to="/favorites">
+            <div className="leftSide">
+                <input
+                    type='search'
+                    className="searchBar"
+                    value={id}
+                    onChange={handleChange}
+                    placeholder="min: 1, max: 826"
+                />
                 <button
-                    className="aggButton navBar"
-                    title="View favorites"
+                    onClick={myOwnSearch}
+                    className="button-33"
+                    title="Add character"
                 >
-                    <i className='fas fa-star'></i>
+                    <span className="material-symbols-outlined">
+                        add
+                    </span>
                 </button>
-            </NavLink>
-            <NavLink to="/home">
+                <span>&emsp;&emsp;</span>
                 <button
-                    className="aggButton navBar"
-                    title="Home page"
+                    title="Add random character"
+                    onClick={randomSearch}
+                    className="button-33"
                 >
-                    <i className='fas fa-home'></i>
+                    <span className="material-symbols-outlined">
+                        shuffle
+                    </span>
                 </button>
-            </NavLink>
-            <NavLink to="/about">
-                <button className="aggButton navBar">ABOUT ME</button>
-            </NavLink>
-            <button
-                className="aggButton navBar"
-                onClick={props.logOutFunction}
-                title="Log out"
-            >
-                <i className='fas fa-door-open'></i>
-            </button>
+                <button
+                    title="Remove all characters"
+                    className="button-33"
+                    onClick={props.clearAllFunction}
+                >
+                    <span className="material-symbols-outlined">
+                        delete
+                    </span>
+                </button>
+
+                <button
+                    className="button-33"
+                    onClick={props.loadDefaultFn}
+                    title="Load default view"
+                >
+                    🌈
+                </button>
+            </div>
+
+            <div className="middleSide">
+                <span>&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+                <img className="rmLogo" src="logorm.png" alt="logoRM" />
+                <span>&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+            </div>
+
+            <div className="rightSide">
+                <NavLink to="/favorites">
+                    <button
+                        className="button-33"
+                        title="View favorites"
+                    >
+                        <span className="material-symbols-outlined">
+                            bookmarks
+                        </span>
+                    </button>
+                </NavLink>
+                <NavLink to="/home">
+                    <button
+                        className="button-33"
+                        title="Home page"
+                    >
+                        <span className="material-symbols-outlined">
+                            house
+                        </span>
+                    </button>
+                </NavLink>
+                <NavLink to="/about">
+                    <button className="button-33">ABOUT ME</button>
+                </NavLink>
+                <button
+                    className="button-33"
+                    onClick={props.logOutFunction}
+                    title="Log out"
+                >
+                    <span className="material-symbols-outlined">
+                        logout
+                    </span>
+                </button>
+            </div>
+
         </div>
     );
 

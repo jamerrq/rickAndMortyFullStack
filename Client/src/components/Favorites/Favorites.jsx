@@ -30,10 +30,10 @@ class Favorites extends React.Component {
     render() {
         return (
             <div className="favContainer">
-                <div className="favoritesButtons">
+                <nav className="favoritesButtons">
                     <div>
                         <label htmlFor="genderSelector">
-                            FILTRAR POR GÉNERO:&emsp;
+                            GENDER:&emsp;
                         </label>
                         <select
                             name="gender"
@@ -55,9 +55,14 @@ class Favorites extends React.Component {
                             </option>
                         </select>
                     </div>
+
+                    <div>
+                        <span className="favsTitle"><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i>&nbsp;FAVORITES&nbsp;<i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span>
+                    </div>
+
                     <div>
                         <label htmlFor="orderSelector">
-                            TIPO DE ORDENAMIENTO:&emsp;
+                            ORDER:&emsp;
                         </label>
                         <select
                             name="order"
@@ -72,7 +77,7 @@ class Favorites extends React.Component {
                             </option>
                         </select>
                     </div>
-                </div>
+                </nav>
                 <div className='cards'>
                     {this.props.myFavorites.map(element =>
                         <Card

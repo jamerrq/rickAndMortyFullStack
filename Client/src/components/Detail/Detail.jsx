@@ -63,26 +63,26 @@ function Detail() {
             <div className="data">
                 <h1 className={"header " + character.gender}>
                     {character?.name ?
-                        <p className={"name " + character.gender}>{character.name}</p> : "No information loaded yet!"}
+                        <p className={"name " + character.gender}>{character.name.toUpperCase()}</p> : "No information loaded yet!"}
                 </h1>
 
                 {character?.status && (
                     <div className="leftAndRight">
-                        <h2 className={"left " + character.gender}>STATUS</h2>
+                        <h2 className={"left " + character.gender}>STATUS&nbsp;<i class='far fa-question-circle'></i></h2>
                         <h2 className={"right " + character.gender}>{character.status}</h2>
                     </div>
                 )}
 
                 {character?.species && (
                     <div className="leftAndRight">
-                        <h2 className={"left " + character.gender}>SPECIES</h2>
+                        <h2 className={"left " + character.gender}>SPECIES&nbsp;<i class='fas fa-dragon'></i></h2>
                         <h2 className={"right " + character.gender}>{character.species}</h2>
                     </div>
                 )}
 
                 {character?.gender && (
                     <div className="leftAndRight">
-                        <h2 className={"left " + character.gender}>GENDER</h2>
+                        <h2 className={"left " + character.gender}>GENDER&nbsp;<i class="material-icons">android</i></h2>
                         <h2 className={"right " + character.gender}>{character.gender}</h2>
                     </div>
                 )}
