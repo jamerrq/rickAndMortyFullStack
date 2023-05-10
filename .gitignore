@@ -24,7 +24,5 @@ yarn-error.log*
 
 
 # JAMER ADDS
-Client/node_modules
-Server/node_modules
-Client/package-lock.json
-Server/package-lock.json
+**/node_modules
+**/package-lock.json

@@ -57,7 +57,7 @@ class Favorites extends React.Component {
                     </div>
 
                     <div>
-                        <span className="favsTitle"><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i>&nbsp;FAVORITES&nbsp;<i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span>
+                        <span className="favsTitle"><i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i>&ensp;FAVORITES&ensp;<i className='fas fa-star'></i><i className='fas fa-star'></i><i className='fas fa-star'></i></span>
                     </div>
 
                     <div>
@@ -78,7 +78,7 @@ class Favorites extends React.Component {
                         </select>
                     </div>
                 </nav>
-                <div className='cards'>
+                <div className='cardsFavs'>
                     {this.props.myFavorites.map(element =>
                         <Card
                             id={element.id}

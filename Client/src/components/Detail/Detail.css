@@ -1,21 +1,13 @@
 .data {
-    width: 48%;
-    /* color: white; */
-    color: #FC4F00;
+    width: 50%;
+
+    color: #00ff2a;
     font-size: 15px;
     font-family: 'Fira Sans';
-    /* background-color: rgb(255, 191, 155, 0.8); */
+
     border-radius: 10px;
     margin-left: 20px;
-}
-
-.data h2,
-.data p {
-    background-color: #caefc6cc;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'RM Font';
 }
 
 .pic {
@@ -70,17 +62,19 @@
 
 
 .link {
-    background-color: #FF4C29;
     border-radius: 50%;
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid #1F1D36;
+    background-color: #088395;
 }
 
 .link:hover {
-    background-color: #088395;
+    background-color: #1093a5;
+    border: 2px solid #00ff2a;
 }
 
 .detail {
@@ -111,15 +105,22 @@
 }
 
 .aboutMeCard {
-    background-color: #E86A33;
-    opacity: 0.8;
+    background-color: #1093a5;
+    opacity: 0.95;
     border-radius: 15px;
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
-    padding: 0px 5px 5px 5px;
+    margin-top: 5%;
+    padding: 1px 5px 1px 5px;
+    margin-bottom: 50px;
     font-family: 'Fira Sans';
-    margin-bottom: 20px;
+    color: black;
+    border: 3px solid #1F1D36;
+}
+
+.aboutMeCard:hover {
+    border: 3px solid #00ff2a;
 }
 
 .name {
@@ -128,7 +129,7 @@
     font-size: 30px;
 }
 
-.name.Female {
+/* .name.Female {
     color: #654E92;
 }
 
@@ -146,13 +147,13 @@
 
 .name.App.Creator {
     color: #040303;
-}
+} */
 
 .left {
     text-align: center;
 }
 
-.left.Female {
+/* .left.Female {
     color: #5F264A;
 }
 
@@ -178,7 +179,7 @@
 
 .right.Genderless {
     color: #0E8388;
-}
+} */
 
 .starButton {
     background-color: rgb(0, 0, 0, 0.2);
@@ -205,7 +206,7 @@
 
 .left,
 .right {
-    width: 48%;
+    width: 50%;
 }
 
 .left {
@@ -222,4 +223,16 @@
 
 .lastRow {
     margin-bottom: 25px;
+}
+
+h3 a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.hrDetails {
+    color: white;
+    height: 1px;
+    background-color: white;
+    margin-top: 10px;
 }

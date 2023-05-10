@@ -10,6 +10,11 @@ import Form from './components/Form/Form';                // Login form
 import NotFound from './components/NotFound/NotFound';    // 404 Component
 import Favorites from './components/Favorites/Favorites'; // Favorites component
 
+
+// Footer icons
+import { FaReact, FaHtml5, FaCss3, FaGithub, } from 'react-icons/fa';
+import { SiRedux, SiJavascript, SiExpress, } from 'react-icons/si';
+
 // Hooks and other React Stuff
 import axios from 'axios';
 import { useState, useEffect } from 'react';
@@ -25,17 +30,26 @@ function App() {
     const location = useLocation(), navigate = useNavigate();
     // Access state
     const [access, setAccess] = useState(false);
-    // Credentials
-    const email = "jamerrq@henry.com", _password = "henry123";
 
-    // Login function
+    // Login function versión nodemon
+    // function login(userData) {
+    //     if (userData.email === email && userData.password === _password) {
+    //         setAccess(true);
+    //         navigate("/home");
+    //     } else {
+    //         alert("Usuario o contraseña incorrectos!");
+    //     };
+    // };
+
+    // Login function versión axios
     function login(userData) {
-        if (userData.email === email && userData.password === _password) {
-            setAccess(true);
-            navigate("/home");
-        } else {
-            alert("Usuario o contraseña incorrectos!");
-        };
+        const { email, password } = userData;
+        const URL = 'http://localhost:3001/rickandmorty/login/';
+        axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+            const { access } = data;
+            setAccess(data);
+            access && navigate('/home');
+        });
     };
 
     useEffect(() => {
@@ -64,7 +78,7 @@ function App() {
     }
 
     function loadDefaults() {
-        const defaultCharactersIds = [311, 49, 129, 826, 694];
+        const defaultCharactersIds = [427, 96, 340, 666, 11];
         setCharacters([]);
         defaultCharactersIds.forEach(id => onSearch(id));
     }
@@ -79,7 +93,7 @@ function App() {
     }
 
     function clearAllCharacters() {
-        setCharacters([]);
+        characters.forEach((c) => onClose(c.id));
     }
 
     return (
@@ -119,6 +133,18 @@ function App() {
                 </Route>
                 <Route path="*" element={<NotFound />} />
             </Routes>
+            {!(location.pathname === "/") &&
+                <footer>
+                    Web Desktop App created by&nbsp;<a href="https://github.com/jamerrq">@jamerrq</a>&nbsp;using&nbsp;
+                    <FaReact />&nbsp;
+                    <FaHtml5 />&nbsp;
+                    <FaCss3 />&nbsp;
+                    <SiRedux />&nbsp;
+                    <SiJavascript />&nbsp;
+                    <SiExpress />&nbsp;
+                    <FaGithub />&nbsp;
+                </footer>
+            }
         </div>
     );
 

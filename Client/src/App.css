@@ -25,3 +25,24 @@ body {
     background-image: url('https://i.redd.it/9x87z34z9es71.jpg');
     background-image: url('https://i.redd.it/3l8pahjewki61.jpg');
 } */
+
+
+footer {
+    background-color: black;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    color: white;
+    text-align: center;
+    font-family: 'Fira Mono for Powerline';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+footer a {
+    display: inline-block;
+}

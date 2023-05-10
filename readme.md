@@ -4,8 +4,8 @@ Versión full stack de esta [app](https://github.com/jamerrq/rickAndMorty)
 desarrollada en React.
 
 ## Setup
-![setup](./imgs/setup.png)
+![setup](./imgs/setup2.0.png)
 
 ## Desktop App
 
-![desktop](./imgs/outv2.0.gif)
+![desktop](./imgs/outv3.0.gif)

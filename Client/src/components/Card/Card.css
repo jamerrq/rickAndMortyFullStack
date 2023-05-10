@@ -34,7 +34,7 @@
 }
 
 .card {
-    background-color: #BE5A83;
+    background-color: #FF6A38;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -45,19 +45,20 @@
     border-radius: 10px;
     padding: 8px;
     font-size: 11px;
-    font-family: 'Fira Sans';
-    border: 3px solid #E06469;
-    opacity: 0.95;
+    font-family: 'RM Font';
+    color: #00ff2a;
+    border: 3px solid #5C868E;
+    opacity: 0.9;
     justify-content: center;
 }
 
 .card img {
-    border: 3px solid #E06469;
-    margin-top: -10px;
+    border: 3px solid #5C868E;
+    /* margin-top: -10px; */
 }
 
 .card:hover {
-    border: 3px solid #DEDEA7;
+    border: 3px solid #9ED0E0;
     opacity: 1;
 }
 
@@ -83,8 +84,8 @@
 }
 
 .card.female {
-    background-color: #917FB3;
-    border: 3px solid #E5BEEC;
+    background-color: #8B1874;
+    border: 3px solid #B71375;
 }
 
 .card.female:hover {
@@ -92,7 +93,7 @@
 }
 
 .card.female img {
-    border: 3px solid #E5BEEC;
+    border: 3px solid #B71375;
 }
 
 .card.female img:hover {
@@ -100,7 +101,7 @@
 }
 
 .card.genderless {
-    background-color: #B9EDDD;
+    background-color: #537188;
     border: 3px solid #87CBB9;
 }
 
@@ -141,7 +142,6 @@
 
 .cardButtons {
 
-    /* color: rgb(212, 0, 212); */
     color: black;
     background-color: #EADEDE;
     border-radius: 50%;
@@ -166,7 +166,7 @@
 
 .idButton {
     position: relative;
-    top: 150px;
+    top: 160px;
     left: -60px;
     border-radius: 50%;
     font-family: 'Fira Sans';
@@ -191,4 +191,18 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+}
+
+@font-face {
+    font-family: 'RM Font';
+    src: url('../../../public/get_schwifty.ttf');
+}
+
+.characterName {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -10px;
+    font-family: 'RM Font';
+    color: #00ff2a;
 }

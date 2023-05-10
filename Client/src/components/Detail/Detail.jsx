@@ -10,14 +10,13 @@ function Detail() {
 
     const { id } = useParams();
     const [character, setCharacter] = useState({});
-    const imageUrl = 'https://i.pinimg.com/564x/05/c8/38/' +
-        '05c838a98bfd219042d475d3c6021639.jpg';
+    const imageUrl = 'https://i.pinimg.com/564x/05/c8/38/05c838a98bfd219042d475d3c6021639.jpg';
 
     useEffect(() => {
         if (id === "0") {
             let data = {
-                name: "Jamer José",
-                status: "Alive",
+                name: "Jamer Jose",
+                status: "Unknown",
                 species: "Human",
                 gender: "App Creator",
                 origin: { name: "Earth" },
@@ -55,6 +54,7 @@ function Detail() {
 
     const programUrl = 'https://www.eafit.edu.co/programas-academicos/' +
         'pregrados/ingenieria-matematica/Paginas/inicio.aspx';
+    const universityUrl = 'https://www.eafit.edu.co/';
 
     return (
 
@@ -68,21 +68,21 @@ function Detail() {
 
                 {character?.status && (
                     <div className="leftAndRight">
-                        <h2 className={"left " + character.gender}>STATUS&nbsp;<i class='far fa-question-circle'></i></h2>
+                        <h2 className={"left " + character.gender}>STATUS</h2>
                         <h2 className={"right " + character.gender}>{character.status}</h2>
                     </div>
                 )}
 
                 {character?.species && (
                     <div className="leftAndRight">
-                        <h2 className={"left " + character.gender}>SPECIES&nbsp;<i class='fas fa-dragon'></i></h2>
+                        <h2 className={"left " + character.gender}>SPECIES</h2>
                         <h2 className={"right " + character.gender}>{character.species}</h2>
                     </div>
                 )}
 
                 {character?.gender && (
                     <div className="leftAndRight">
-                        <h2 className={"left " + character.gender}>GENDER&nbsp;<i class="material-icons">android</i></h2>
+                        <h2 className={"left " + character.gender}>GENDER</h2>
                         <h2 className={"right " + character.gender}>{character.gender}</h2>
                     </div>
                 )}
@@ -97,7 +97,8 @@ function Detail() {
                 {
                     character?.links ?
                         <>
-                            <h2 style={{ color: "black" }}>LINKS</h2>
+                            <hr className="hrDetails" />
+                            <h2 >LINKS</h2>
                             <div className="linkContainer">
                                 {
                                     character.links.map((link, index) =>
@@ -114,13 +115,13 @@ function Detail() {
                                 }
                             </div>
                             <div className="aboutMeCard">
-                                <h2 style={{ fontStyle: "italic", padding: "2%", color: "black" }}> Sobre mí: </h2>
-                                <h3 style={{ fontStyle: "italic", color: "black", padding: "0.9%" }}> Hola, mi
-                                    nombre es Jamer José, soy
+                                <h2> About me: </h2>
+                                <h3> Hola! Mi
+                                    nombre es Jamer José, tengo 23 años y soy&nbsp;
                                     <a href={programUrl}> Ingeniero
-                                        Matemático</a>  de la universidad EAFIT.
+                                        Matemático</a>  de la universidad <a href={universityUrl}>EAFIT</a>.
                                     Me gusta mucho la programación,
-                                    el ajedrez y los gatos.</h3>
+                                    el ajedrez, las matemáticas y los gatos.</h3>
                             </div>
                         </>
                         : null

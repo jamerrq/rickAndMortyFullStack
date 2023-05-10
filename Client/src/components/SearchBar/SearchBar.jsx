@@ -6,7 +6,7 @@ import './SearchBar.css'
 
 export default function SearchBar(props) {
 
-    const [id, setId] = useState("");
+    const [id, setId] = useState("420");
     const handleChange = (e) => {
         const newValue = e.target.value;
         setId(newValue);

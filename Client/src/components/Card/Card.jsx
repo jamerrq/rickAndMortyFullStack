@@ -59,6 +59,7 @@ class Card extends React.Component {
 
     closeCard() {
         this.props.onClose(this.props.id);
+        // removeFav(this.props.id);
     }
 
     render() {
@@ -90,9 +91,10 @@ class Card extends React.Component {
                                 <i className='fas fa-star'></i>
                             </p>
 
-
-                            <h2 style={{ marginTop: "-10px" }}>
-                                {this.props.name}
+                            <h2 className="characterName">
+                                <span>
+                                {this.props.name.toUpperCase()}
+                                </span>
                             </h2>
 
                         </div>

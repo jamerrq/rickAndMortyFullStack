@@ -9,45 +9,71 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
+
+        // case ADD_FAV:
+        //     let copy = [...state.allCharacters, action.payload];
+        //     return {
+        //         ...state,
+        //         myFavorites: [...copy],
+        //         allCharacters: [...copy],
+        //     };
+
+        // REDUCER | ADD_FAV
         case ADD_FAV:
-            let copy = [...state.allCharacters, action.payload];
             return {
                 ...state,
-                myFavorites: [...copy],
-                allCharacters: [...copy],
+                myFavorites: action.payload,
+                allCharacters: action.payload
             };
+
+        // case REMOVE_FAV:
+        //     return {
+        //         ...state,
+        //         myFavorites: state.myFavorites.filter(fav => fav.id !==
+        //             action.payload),
+        //         allCharacters: state.allCharacters.filter(ch => ch.id !== action.payload),
+        //     };
+
+        // REDUCER | REMOVE_FAV
         case REMOVE_FAV:
+
             return {
                 ...state,
-                myFavorites: state.myFavorites.filter(fav => fav.id !==
-                    action.payload),
-                allCharacters: state.allCharacters.filter(ch => ch.id !== action.payload),
+                myFavorites: action.payload
             };
+
         case FILTER_CARDS:
+
             let genderFilter = [...state.allCharacters];
-            if (action.payload !== 'all') genderFilter = genderFilter.filter(ch => ch.gender ===
-                action.payload);
+            if (action.payload !== 'all') genderFilter = genderFilter.filter(
+                ch => ch.gender === action.payload);
+
             return {
                 ...state,
                 myFavorites: genderFilter,
-            }
+            };
+
         case ORDER_CARDS:
+
             let orderFilter = state.allCharacters.sort((a, b) => {
                 if (action.payload === 'asc') {
                     return a.id - b.id;
                 }
                 return b.id - a.id;
             });
+
             return {
                 ...state,
                 myFavorites: orderFilter,
-            }
+            };
+
         default:
             return {
                 ...state,
             };
-    }
-}
+    };
+
+};
 
 
 export default rootReducer;
