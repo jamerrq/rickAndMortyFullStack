@@ -25,7 +25,7 @@ const deleteFav = (req, res) => {
     // recibiendo por body.
     const { id } = req.params;
     const deleteCharacter = myFavorites.filter((character) => {
-        return character.id !== parseInt(id)
+        return parseInt(character.id) !== parseInt(id);
     });
     myFavorites = deleteCharacter;
 

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
+import { useLocation } from "react-router-dom";
 
 import './SearchBar.css'
 
@@ -10,17 +11,19 @@ export default function SearchBar(props) {
     const handleChange = (e) => {
         const newValue = e.target.value;
         setId(newValue);
-    }
+    };
 
     const myOwnSearch = function () {
         props.onSearch(id);
-    }
+    };
 
     const randomSearch = function () {
         const max = 826;
         const char = Math.floor(Math.random() * max);
         props.onSearch(char);
-    }
+    };
+
+    const location = useLocation();
 
     return (
         <div className="container">
@@ -78,26 +81,30 @@ export default function SearchBar(props) {
             </div>
 
             <div className="rightSide">
-                <NavLink to="/favorites">
-                    <button
-                        className="button-33"
-                        title="View favorites"
-                    >
-                        <span className="material-symbols-outlined">
-                            bookmarks
-                        </span>
-                    </button>
-                </NavLink>
-                <NavLink to="/home">
-                    <button
-                        className="button-33"
-                        title="Home page"
-                    >
-                        <span className="material-symbols-outlined">
-                            house
-                        </span>
-                    </button>
-                </NavLink>
+                {!(location.pathname === "/favorites") &&
+                    <NavLink to="/favorites">
+                        <button
+                            className="button-33"
+                            title="View favorites"
+                        >
+                            <span className="material-symbols-outlined">
+                                bookmarks
+                            </span>
+                        </button>
+                    </NavLink>
+                }
+                {!(location.pathname === "/home") &&
+                    <NavLink to="/home">
+                        <button
+                            className="button-33"
+                            title="Home page"
+                        >
+                            <span className="material-symbols-outlined">
+                                house
+                            </span>
+                        </button>
+                    </NavLink>
+                }
                 <NavLink to="/about">
                     <button className="button-33">ABOUT ME</button>
                 </NavLink>
@@ -115,4 +122,4 @@ export default function SearchBar(props) {
         </div>
     );
 
-}
+};

@@ -26,12 +26,10 @@ const rootReducer = (state = initialState, action) => {
                 allCharacters: action.payload
             };
 
-        // case REMOVE_FAV:
-        //     return {
-        //         ...state,
-        //         myFavorites: state.myFavorites.filter(fav => fav.id !==
-        //             action.payload),
-        //         allCharacters: state.allCharacters.filter(ch => ch.id !== action.payload),
+        // case REMOVE_FAV: return { ...state, myFavorites:
+        //     state.myFavorites.filter(fav => fav.id !== action.payload),
+        //     allCharacters: state.allCharacters.filter(ch => ch.id !==
+        //     action.payload),
         //     };
 
         // REDUCER | REMOVE_FAV

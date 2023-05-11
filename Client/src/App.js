@@ -18,7 +18,7 @@ import { SiRedux, SiJavascript, SiExpress, } from 'react-icons/si';
 // Hooks and other React Stuff
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Routes as Switch, Route, useLocation, useNavigate } from 'react-router-dom';
 
 
 // App component
@@ -42,59 +42,63 @@ function App() {
     // };
 
     // Login function versión axios
-    function login(userData) {
+    async function login(userData) {
         const { email, password } = userData;
         const URL = 'http://localhost:3001/rickandmorty/login/';
-        axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-            const { access } = data;
-            setAccess(data);
-            access && navigate('/home');
-        });
+        try {
+            axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+                const { access } = data;
+                setAccess(data);
+                access && navigate('/home');
+            });
+        } catch (error) {
+            return ({
+                error: error.message,
+            });
+        };
     };
 
     useEffect(() => {
         !access && navigate('/');
     }, [access, navigate]);
 
-    function onSearch(id) {
+    async function onSearch(id) {
         const url = `http://localhost:3001/rickandmorty/character/${id}`;
-        axios(url).then(({ data }) => {
-            if (data.name) {
-                let isRepeated = characters.reduce((acc, c) => {
-                    return acc || c.id === data.id
-                }, false);
-                if (isRepeated) {
-                    window.alert('¡Este personaje ya está agregado!');
-                    return;
-                }
-                setCharacters((oldChars) => [...oldChars, data]);
+        try {
+            const promise = await axios(url);
+            let isRepeated = characters.reduce((acc, c) => {
+                return acc || c.id === promise.data.id
+            }, false);
+            if (isRepeated) {
+                window.alert('¡Este personaje ya está agregado!');
+                return;
+            };
+            setCharacters((oldChars) => [...oldChars, promise.data]);
+        } catch (error) {
+            return ({
+                error: error.message,
+            });
+        };
+    };
 
-            } else {
-                window.alert("¡No hay personajes con este id!");
-            }
-        }).catch(() => {
-            window.alert('¡No hay personajes con este ID!');
-        });
-    }
-
-    function loadDefaults() {
+    async function loadDefaults() {
         const defaultCharactersIds = [427, 96, 340, 666, 11];
-        setCharacters([]);
+        await clearAllCharacters();
         defaultCharactersIds.forEach(id => onSearch(id));
-    }
+    };
 
-    function onClose(id) {
+    async function onClose(id) {
         setCharacters((oldChars) => oldChars.filter((c) => c.id !== id));
-    }
+    };
 
     function logOut() {
         setAccess(false);
         navigate("/");
-    }
+    };
 
-    function clearAllCharacters() {
+    async function clearAllCharacters() {
         characters.forEach((c) => onClose(c.id));
-    }
+    };
 
     return (
         <div className='App'>
@@ -104,7 +108,7 @@ function App() {
                     clearAllFunction={clearAllCharacters}
                     loadDefaultFn={loadDefaults}
                 />}
-            <Routes>
+            <Switch>
                 <Route
                     path="/"
                     element={<Form loginFunction={login} />}
@@ -132,7 +136,7 @@ function App() {
                 >
                 </Route>
                 <Route path="*" element={<NotFound />} />
-            </Routes>
+            </Switch>
             {!(location.pathname === "/") &&
                 <footer>
                     Web Desktop App created by&nbsp;<a href="https://github.com/jamerrq">@jamerrq</a>&nbsp;using&nbsp;
