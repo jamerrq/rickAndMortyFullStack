@@ -1,18 +1,35 @@
-const http = require('http');
-// const data = require('./utils/data');
-const getCharById = require('./controllers/getCharById');
+const express = require('express');
+// Dirígete al archivo index.js en el que tienes tu servidor. Aquí deberás:
+// Importar tu router.
+const router = require('./routes/index');
 
 
+const server = express();
 const PORT = 3001;
-const server = http.createServer((req, res) => {
 
-    // To allow front end to access the server
-    res.setHeader('Access-Control-Allow-Origin', '*');
 
-    // Petición válida
-    if (req.url.includes('rickandmorty/character')) {
-        let id = req.url.split('/').at(-1);
-        getCharById(res, id);
-        // console.log('Sent petition to getCharById');
-    }
-}).listen(PORT, console.log(`port on ${PORT}`));
+// Agregar middleware.
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept'
+    );
+    res.header(
+        'Access-Control-Allow-Methods',
+        'GET, POST, OPTIONS, PUT, DELETE'
+    );
+    next();
+});
+
+// Crear un middleware que reciba los datos en formato JSON.
+server.use(express.json());
+
+// Crear un middleware que agregue el string "/rickandmorty" antes de cada una
+// de tus rutas.
+server.use('/rickandmorty', router);
+
+server.listen(PORT, () => {
+    console.log(`Server raised on port ${PORT}`);
+});
