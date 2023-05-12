@@ -50,59 +50,61 @@ class Form extends React.Component {
 
     render() {
         return (
-            <div className="formContainer">
-                <form onSubmit={this.handleSubmit}>
-                    <img src="https://www.icegif.com/wp-content/uploads/2022/06/icegif-519.gif" alt="logoRM" />
-                    <hr />
-                    <div className="inputField">
-                        <i
-                            className='fas fa-user-alt'
-                            style={this.state.errors.email ? {
-                                color: "red"
-                            } : undefined}
+            <div className="formBody">
+                <div className="formContainer">
+                    <form onSubmit={this.handleSubmit}>
+                        <img src="https://www.icegif.com/wp-content/uploads/2022/06/icegif-519.gif" alt="logoRM" />
+                        <hr />
+                        <div className="inputField">
+                            <i
+                                className='fas fa-user-alt'
+                                style={this.state.errors.email ? {
+                                    color: "red"
+                                } : undefined}
+                            >
+                            </i>
+                            &nbsp;
+                            <input
+                                type="text"
+                                name="email"
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                                placeholder="user"
+                            />
+                        </div>
+                        {this.state.errors.email && <p>
+                            {this.state.errors.email}</p>}
+                        <div className="inputField">
+                            <i
+                                className='fas fa-fingerprint'
+                                style={this.state.errors.password ? {
+                                    color: "red"
+                                } : undefined}
+                            >
+                            </i>
+                            &nbsp;
+                            <input
+                                type="password"
+                                value={this.state.password}
+                                name="password"
+                                onChange={this.handleChange}
+                                placeholder="password"
+                            />
+                        </div>
+                        {this.state.errors.password && <p>
+                            {this.state.errors.password}</p>}
+                        <button
+                            className="formSubmitButton"
+                            disabled={Object.keys(this.state.errors).reduce((acc, value) => { return acc + this.state.errors[value].length }, 0)}
                         >
-                        </i>
-                        &nbsp;
-                        <input
-                            type="text"
-                            name="email"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                            placeholder="user"
-                        />
-                    </div>
-                    {this.state.errors.email && <p>
-                        {this.state.errors.email}</p>}
-                    <div className="inputField">
-                        <i
-                            className='fas fa-fingerprint'
-                            style={this.state.errors.password ? {
-                                color: "red"
-                            } : undefined}
-                        >
-                        </i>
-                        &nbsp;
-                        <input
-                            type="password"
-                            value={this.state.password}
-                            name="password"
-                            onChange={this.handleChange}
-                            placeholder="password"
-                        />
-                    </div>
-                    {this.state.errors.password && <p>
-                        {this.state.errors.password}</p>}
-                    <button
-                        className="formSubmitButton"
-                        disabled={Object.keys(this.state.errors).reduce((acc, value) => { return acc + this.state.errors[value].length }, 0)}
-                    >
-                        LOG IN
-                    </button>
-                </form>
+                            LOG IN
+                        </button>
+                    </form>
+                </div>
             </div>
-        )
-    }
+        );
+    };
+};
 
-}
 
 export default Form;

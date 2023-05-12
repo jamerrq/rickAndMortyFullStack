@@ -17,7 +17,7 @@ function Detail() {
             let data = {
                 name: "Jamer Jose",
                 status: "Unknown",
-                species: "Human",
+                species: "Cat",
                 gender: "App Creator",
                 origin: { name: "Earth" },
                 image: imageUrl,

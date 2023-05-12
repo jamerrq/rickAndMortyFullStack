@@ -36,7 +36,6 @@ export const addFav = (character) => {
     try {
         const endpoint = 'http://localhost:3001/rickandmorty/fav';
         return async (dispatch) => {
-            // console.log('Character ' + character.id + ' added');
             const { data } = await axios.post(endpoint, character);
             console.log('data', data);
             return dispatch({

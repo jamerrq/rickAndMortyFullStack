@@ -14,18 +14,18 @@ class Favorites extends React.Component {
         }
         this.handleOrder = this.handleOrder.bind(this);
         this.handleFilter = this.handleFilter.bind(this);
-    }
+    };
 
     handleOrder(event) {
         this.props.dispatch(orderCards(event.target.value));
         this.setState({
             aux: !this.state.aux,
         });
-    }
+    };
 
     handleFilter(event) {
         this.props.dispatch(filterCards(event.target.value));
-    }
+    };
 
     render() {
         return (
@@ -94,14 +94,15 @@ class Favorites extends React.Component {
                 </div>
             </div>
         )
-    }
-}
+    };
+};
 
 
 const mapStateToProps = (state) => {
     return {
         myFavorites: state.myFavorites,
-    }
-}
+    };
+};
+
 
 export default connect(mapStateToProps, null)(Favorites);

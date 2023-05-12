@@ -4,19 +4,11 @@ import { ADD_FAV, REMOVE_FAV, FILTER_CARDS, ORDER_CARDS } from "./action-types";
 const initialState = {
     myFavorites: [],
     allCharacters: [],
-}
+};
 
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-
-        // case ADD_FAV:
-        //     let copy = [...state.allCharacters, action.payload];
-        //     return {
-        //         ...state,
-        //         myFavorites: [...copy],
-        //         allCharacters: [...copy],
-        //     };
 
         // REDUCER | ADD_FAV
         case ADD_FAV:
@@ -25,12 +17,6 @@ const rootReducer = (state = initialState, action) => {
                 myFavorites: action.payload,
                 allCharacters: action.payload
             };
-
-        // case REMOVE_FAV: return { ...state, myFavorites:
-        //     state.myFavorites.filter(fav => fav.id !== action.payload),
-        //     allCharacters: state.allCharacters.filter(ch => ch.id !==
-        //     action.payload),
-        //     };
 
         // REDUCER | REMOVE_FAV
         case REMOVE_FAV:

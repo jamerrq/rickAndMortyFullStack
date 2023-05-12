@@ -117,6 +117,8 @@
     font-family: 'Fira Sans';
     color: black;
     border: 3px solid #1F1D36;
+    opacity: 0.7;
+    backdrop-filter: blur(1px);
 }
 
 .aboutMeCard:hover {

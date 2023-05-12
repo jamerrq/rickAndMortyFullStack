@@ -14,6 +14,7 @@ import Favorites from './components/Favorites/Favorites'; // Favorites component
 // Footer icons
 import { FaReact, FaHtml5, FaCss3, FaGithub, } from 'react-icons/fa';
 import { SiRedux, SiJavascript, SiExpress, } from 'react-icons/si';
+import { TbBrandGithubCopilot } from 'react-icons/tb';
 
 // Hooks and other React Stuff
 import axios from 'axios';
@@ -147,6 +148,7 @@ function App() {
                     <SiJavascript />&nbsp;
                     <SiExpress />&nbsp;
                     <FaGithub />&nbsp;
+                    <TbBrandGithubCopilot />&nbsp;
                 </footer>
             }
         </div>

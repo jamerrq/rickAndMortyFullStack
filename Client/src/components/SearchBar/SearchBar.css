@@ -4,6 +4,7 @@
     align-items: center;
     font-family: 'Fira Sans';
     background-color: #caefc6cc;
+    backdrop-filter: blur(1px);
     width: 100%;
     height: 45px;
     position: fixed;

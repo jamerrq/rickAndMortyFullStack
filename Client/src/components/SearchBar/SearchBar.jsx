@@ -1,13 +1,14 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { useLocation } from "react-router-dom";
+// import { connect } from "react-redux";
 
 import './SearchBar.css'
 
 
-export default function SearchBar(props) {
+function SearchBar(props) {
 
-    const [id, setId] = useState("420");
+    const [id, setId] = useState("");
     const handleChange = (e) => {
         const newValue = e.target.value;
         setId(newValue);
@@ -19,7 +20,14 @@ export default function SearchBar(props) {
 
     const randomSearch = function () {
         const max = 826;
-        const char = Math.floor(Math.random() * max);
+        let char = undefined;
+        while (true) {
+            char = Math.floor(Math.random() * max) + 1;
+            // console.log(props);
+            if (!props.allCharacters || !props?.allCharacters?.includes(char) || props?.allCharacters?.length === max) {
+                break;
+            };
+        };
         props.onSearch(char);
     };
 
@@ -123,3 +131,15 @@ export default function SearchBar(props) {
     );
 
 };
+
+
+// Map state to props
+// const mapStateToProps = (state) => {
+//     return {
+//         allCharacters: state.allCharacters,
+//     };
+// };
+
+// export default connect(mapStateToProps, null)(SearchBar);
+
+export default SearchBar;
