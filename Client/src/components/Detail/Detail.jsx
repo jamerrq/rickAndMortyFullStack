@@ -114,7 +114,7 @@ function Detail() {
                                     ))
                                 }
                             </div>
-                            <div className="aboutMeCard">
+                            <div className="aboutMeCard glass-effect">
                                 <h2> About me: </h2>
                                 <h3> Hola! Mi
                                     nombre es Jamer José, tengo 23 años y soy&nbsp;
@@ -141,7 +141,7 @@ function Detail() {
 
     );
 
-}
+};
 
 
 export default Detail;
