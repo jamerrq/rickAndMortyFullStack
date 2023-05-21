@@ -44,6 +44,7 @@ export const addFav = (character) => {
             });
         };
     }
+    // eslint-disable-next-line
     catch (error) {
         return { error: error.message }
     };
